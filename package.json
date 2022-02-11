@@ -1,12 +1,12 @@
 {
   "name": "jest-viacep",
   "version": "1.0.0",
-  "description": "",
+  "description": "Testes de integração",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
-  "author": "",
+  "author": "Luis Fernando Fonseca Gorgulho",
   "license": "ISC",
   "dependencies": {
     "jest": "^27.5.1",
