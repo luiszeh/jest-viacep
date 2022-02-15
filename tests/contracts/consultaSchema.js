@@ -24,3 +24,10 @@ const schema = () => { Joi.object({
 })}
 
 module.exports = schema;
+
+/* Dúvidas e comentários:
+
+    1 - o cep é possivel realizar a pesquisa com hífen tbm, como testar isso?
+    2 - como utilizar esse schema no assert la no arquivo de teste?
+
+*/

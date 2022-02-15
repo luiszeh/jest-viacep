@@ -9,8 +9,7 @@ describe('GET de um CEP', () => {
             .get('ws/37470000/json')
             .expect(200)
             .then(response => {
-                expect(response.body).toEqual(schema)
-            })
-      
+                expect(response.body, schema)
+            })    
     })
 })
