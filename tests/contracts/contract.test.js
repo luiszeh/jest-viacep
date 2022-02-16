@@ -1,15 +1,16 @@
+const Joi = require('joi');
 const request = require('supertest');
 const API_URL = "https://viacep.com.br/";
 const schema = require("./consultaSchema");
 
-describe('GET de um CEP', () => {
+describe('Teste contrato API ViaCep', () => {
 
-    it('Faça uma requisição e deve retornar status 200 e o Schema correto', () => {
-        request(API_URL)
-            .get('ws/37470000/json')
+    it('Valida se o status é 200 e se retorna o schema correto', async () => {
+
+        const response = await request(API_URL)
+            .get('ws/25035030/json')
             .expect(200)
-            .then(response => {
-                expect(response.body, schema)
+            // const resultado
+            Joi.assert(response.body, schema)
             })    
     })
-})

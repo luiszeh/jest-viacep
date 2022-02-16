@@ -1,27 +1,27 @@
 const Joi = require('joi');
 
 
-const schema = () => { Joi.object({
-    cep: Joi.number().max(9).required().positive(),
+const schema = Joi.object().keys({
+    cep: Joi.string().required(),
 
-    logadouro: Joi.number().empty('').required(),
+    logradouro: Joi.string().allow(''),
 
-    complemento: Joi.string().empty('').required(),
+    complemento: Joi.string().allow(''),
 
-    bairro: Joi.string().empty('').required(),
+    bairro: Joi.string().allow(''),
 
     localidade: Joi.string(),
 
-    uf: Joi.string().max(2).required(),
+    uf: Joi.string(),
 
-    ibge: Joi.number().precision(7).required().positive(),
+    ibge: Joi.string(),
 
-    gia: Joi.string().empty('').required(),
+    gia: Joi.string().allow(''),
 
-    ddd: Joi.number().precision(2).required(),
+    ddd: Joi.string(),
 
-    siafi: Joi.number().precision(4).required()
-})}
+    siafi: Joi.string()
+})
 
 module.exports = schema;
 
@@ -29,5 +29,7 @@ module.exports = schema;
 
     1 - o cep é possivel realizar a pesquisa com hífen tbm, como testar isso?
     2 - como utilizar esse schema no assert la no arquivo de teste?
+    3 - o precision é utilizado quando quero um valor que tenha exatamente um numero X de caracteres? ex: igbe que tem que ter 7 digitos
+    4 - Não peguei como faço o assert do joi no arquivo de testes para "linkar" com meu schema e verificar os "matchs"
 
 */

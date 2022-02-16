@@ -4,13 +4,14 @@
   "description": "Testes de integração",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --watchAll"
   },
   "author": "Luis Fernando Fonseca Gorgulho",
   "license": "ISC",
   "dependencies": {
     "jest": "^27.5.1",
     "joi": "^17.6.0",
+    "joi-assert": "0.0.3",
     "supertest": "^6.2.2"
   }
 }
